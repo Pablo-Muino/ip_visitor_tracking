@@ -7,7 +7,7 @@ import logging
 _logger = logging.getLogger(__name__)
 
 class IpVisitorTracking(models.Model):
-    _name = 'ip.visitor.tracker'
+    _name = 'ip.visitor.tracking'
     _description = 'Tracker del cliente mediante su Ip'
     _rec_name = 'ip_address'
 
