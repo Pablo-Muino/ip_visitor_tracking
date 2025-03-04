@@ -50,6 +50,6 @@
     </record>
 
     <!-- Menú y submenú -->
-    <menuitem id="menu_ip_visitor_tracking" name="Visitor Tracking" parent="website.menu_website_configuration" sequence="10"/>
+    <menuitem id="menu_ip_visitor_tracking" name="Visitor Tracking" sequence="10"/>
     <menuitem id="submenu_ip_visitor_tracking" name="Visitor Data" parent="menu_ip_visitor_tracking" action="action_ip_visitor_tracking" sequence="10"/>
 </odoo>
