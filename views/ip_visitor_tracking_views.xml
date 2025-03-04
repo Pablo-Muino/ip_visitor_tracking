@@ -1,8 +1,8 @@
 <odoo>
     <!-- Vista de formulario -->
     <record id="view_ip_visitor_form" model="ir.ui.view">
-        <field name="name">ip.visitor.form</field>
-        <field name="model">ip.visitor</field>
+        <field name="name">ip.visitor.tracking.form</field>
+        <field name="model">ip.visitor.tracking</field>
         <field name="arch" type="xml">
             <form string="Visitor Geolocation">
                 <group>
@@ -26,8 +26,8 @@
 
     <!-- Vista de lista (tree) -->
     <record id="view_ip_visitor_tree" model="ir.ui.view">
-        <field name="name">ip.visitor.tree</field>
-        <field name="model">ip.visitor</field>
+        <field name="name">ip.visitor.tracking.tree</field>
+        <field name="model">ip.visitor.tracking</field>
         <field name="arch" type="xml">
             <tree string="Visitors">
                 <field name="ip_address"/>
@@ -43,14 +43,14 @@
     </record>
 
     <!-- Acción para ver los registros -->
-    <record id="action_ip_visitor" model="ir.actions.act_window">
+    <record id="action_ip_visitor_tracking" model="ir.actions.act_window">
         <field name="name">Visitor Geolocation</field>
-        <field name="res_model">ip.visitor</field>
+        <field name="res_model">ip.visitor.tracking</field>
         <field name="view_mode">tree,form</field>
         <field name="target">current</field>
     </record>
 
     <!-- Menú y submenú -->
     <menuitem id="menu_ip_visitor_tracking" name="Visitor Tracking" parent="website.menu_website_configuration" sequence="10"/>
-    <menuitem id="submenu_ip_visitor_tracking" name="Visitor Data" parent="menu_ip_visitor_tracking" action="action_ip_visitor" sequence="10"/>
+    <menuitem id="submenu_ip_visitor_tracking" name="Visitor Data" parent="menu_ip_visitor_tracking" action="action_ip_visitor_tracking" sequence="10"/>
 </odoo>
