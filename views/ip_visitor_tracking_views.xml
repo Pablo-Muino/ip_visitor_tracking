@@ -1,0 +1,56 @@
+<odoo>
+    <!-- Vista de formulario -->
+    <record id="view_ip_visitor_form" model="ir.ui.view">
+        <field name="name">ip.visitor.form</field>
+        <field name="model">ip.visitor</field>
+        <field name="arch" type="xml">
+            <form string="Visitor Geolocation">
+                <group>
+                    <field name="ip_address"/>
+                    <field name="api_key"/>
+                    <field name="country" readonly="1"/>
+                    <field name="city" readonly="1"/>
+                    <field name="latitude" readonly="1"/>
+                    <field name="longitude" readonly="1"/>
+                    <field name="isp" readonly="1"/>
+                    <field name="organization" readonly="1"/>
+                    <field name="visit_time" readonly="1"/>
+                </group>
+                <footer>
+                    <button name="fetch_geolocation" string="Fetch Geolocation" type="object" class="oe_highlight"/>
+                    <button string="Save" type="object" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de lista (tree) -->
+    <record id="view_ip_visitor_tree" model="ir.ui.view">
+        <field name="name">ip.visitor.tree</field>
+        <field name="model">ip.visitor</field>
+        <field name="arch" type="xml">
+            <tree string="Visitors">
+                <field name="ip_address"/>
+                <field name="country"/>
+                <field name="city"/>
+                <field name="latitude"/>
+                <field name="longitude"/>
+                <field name="isp"/>
+                <field name="organization"/>
+                <field name="visit_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Acción para ver los registros -->
+    <record id="action_ip_visitor" model="ir.actions.act_window">
+        <field name="name">Visitor Geolocation</field>
+        <field name="res_model">ip.visitor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <!-- Menú y submenú -->
+    <menuitem id="menu_ip_visitor_tracking" name="Visitor Tracking" parent="website.menu_website_configuration" sequence="10"/>
+    <menuitem id="submenu_ip_visitor_tracking" name="Visitor Data" parent="menu_ip_visitor_tracking" action="action_ip_visitor" sequence="10"/>
+</odoo>
